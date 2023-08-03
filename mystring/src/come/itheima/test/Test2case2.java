@@ -44,7 +44,7 @@ public class Test2case2 {
         for (int i = 1; i < arr.length; i++) {
             arr[i - 1] = arr[i];
         }
-        //把原来0索引上的字符放到最后一个索引
+        // 把原来0索引上的字符放到最后一个索引
         arr[arr.length - 1] = first;
 
         //利用字符数组创建一个字符串对象
