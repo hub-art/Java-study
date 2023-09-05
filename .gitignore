@@ -1,31 +1,29 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
-# Other files and folders
-.settings/
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-#过滤掉不想要文件和文件夹
-*.exe
-*.sln
-*.vcxproj
-*.filters
-*.user
-*.suo
-*.db
-*.ipch
-Debug/
-.vs
-Release/
+### VS Code ###
+.vscode/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+### Mac OS ###
+.DS_Store
