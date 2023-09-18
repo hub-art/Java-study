@@ -37,11 +37,7 @@ public class Test6 {
     如果不存在，返回false
      */
     public static boolean contains(ArrayList<User> list, String id) {
-        int index = getIndex(list, id);
-        if (index >= 0){
-            return true;
-        }
-        return false;
+        return getIndex(list, id) >= 0;
     }
 
     public static int getIndex(ArrayList<User> list, String id) {
