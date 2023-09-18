@@ -37,13 +37,20 @@ public class Test6 {
     如果不存在，返回false
      */
     public static boolean contains(ArrayList<User> list, String id) {
-        for (int i = 0; i < list.size(); i++) {
-            User u = list.get(i);
-            String uid = u.getId();
-            if (uid.equals(id)) {
-                return true;
-            }
+        int index = getIndex(list, id);
+        if (index >= 0){
+            return true;
         }
         return false;
+    }
+
+    public static int getIndex(ArrayList<User> list, String id) {
+        for (int i = 0; i < list.size(); i++) {
+            User u = list.get(i);
+            if (u.getId().equals(id)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
