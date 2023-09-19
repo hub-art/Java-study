@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class studentSystem {
     public static void main(String[] args) {
-        ArrayList<Student>list = new ArrayList<>();
+        ArrayList<Student> list = new ArrayList<>();
         while (true) {
             System.out.println("----------欢迎来到学生管理系统----------");
             System.out.println("1:添加学生");
@@ -20,12 +20,7 @@ public class studentSystem {
 
             switch (number) {
                 case "1" -> addStudent(list);
-                case "2" -> {
-                    boolean flag = deleteStudent(list);
-                    if (!flag){
-                        break;
-                    }
-                }
+                case "2" -> deleteStudent(list);
                 case "3" -> updateStudent(list);
                 case "4" -> findStudent(list);
                 case "5" -> System.exit(0);//停止虚拟机运行
@@ -41,13 +36,6 @@ public class studentSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入学生id");
         String id = sc.next();
-        //id唯一
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId().equals(id)){
-                System.out.println("id重复，请重新输入");
-                addStudent(list);
-            }
-        }
         s.setId(id);
         System.out.println("请输入学生姓名");
         String name = sc.next();
@@ -63,28 +51,35 @@ public class studentSystem {
     }
 
     //删除学生
-    public static boolean deleteStudent(ArrayList<Student> list) {
+    public static void deleteStudent(ArrayList<Student> list) {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入要删除的学生id");
         String id = sc.next();
         for (int i = 0; i < list.size(); i++) {
-            Student s = list.get(i);
-            if (s.getId().equals(id)){
+            if (list.get(i).getId().equals(id)) {
                 list.remove(i);
-                return true;
             }
         }
-        System.out.println("不存在");
-        return false;
     }
 
     //修改学生
     public static void updateStudent(ArrayList<Student> list) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入要修改的学生id");
+        String id = scanner.next();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getId().equals(id)) {
 
+            }
+        }
     }
 
     //查询学生
     public static void findStudent(ArrayList<Student> list) {
-
+        System.out.println("id\t" + "姓名\t" + "年龄\t" + "家庭住址\t");
+        for (int i = 0; i < list.size(); i++) {
+            Student s = list.get(i);
+            System.out.println(s.getId() + "\t" + s.getName() + "\t" + s.getAge() + "\t" + s.getAddress() + "\t");
+        }
     }
 }
