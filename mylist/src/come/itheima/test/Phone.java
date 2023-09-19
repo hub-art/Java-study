@@ -1,8 +1,8 @@
 package come.itheima.test;
 
 public class Phone {
-    String brand;
-    int price;
+    private String brand;
+    private int price;
 
     public Phone() {
 

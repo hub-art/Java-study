@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/mystring/mystring.iml" filepath="$PROJECT_DIR$/mystring/mystring.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-code/oop-code.iml" filepath="$PROJECT_DIR$/oop-code/oop-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/ruance/ruance.iml" filepath="$PROJECT_DIR$/ruance/ruance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/studentsystem/studentsystem.iml" filepath="$PROJECT_DIR$/studentsystem/studentsystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/ruance/test.iml" filepath="$PROJECT_DIR$/ruance/test.iml" />
       <module fileurl="file://$PROJECT_DIR$/twodimensionarr/twodimensionarr.iml" filepath="$PROJECT_DIR$/twodimensionarr/twodimensionarr.iml" />
     </modules>
