@@ -29,13 +29,42 @@ public class studentSystem {
         }
     }
 
+    //判断id是否存在
+    public static boolean isIDExists(ArrayList<Student> list, String id) {
+        for (Student s : list) {
+            if (s.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //获取当前id的下标索引
+    public static int getIndex(ArrayList<Student> list, String id) {
+        for (int i = 0; i < list.size(); i++) {
+            Student s = list.get(i);
+            if (s.getId().equals(id)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     //添加学生
     public static void addStudent(ArrayList<Student> list) {
         //利用空参构造先创建学生对象
         Student s = new Student();
         Scanner sc = new Scanner(System.in);
-        System.out.println("请输入学生id");
-        String id = sc.next();
+        String id = null;
+        while (true) {
+            System.out.println("请输入学生id");
+            id = sc.next();
+            if (isIDExists(list, id)) {
+                System.out.println("id已存在，请重新输入");
+            } else {
+                break;
+            }
+        }
         s.setId(id);
         System.out.println("请输入学生姓名");
         String name = sc.next();
@@ -48,6 +77,7 @@ public class studentSystem {
         s.setAddress(address);
         //把对象添加到集合中
         list.add(s);
+        System.out.println("添加成功");
     }
 
     //删除学生
@@ -55,31 +85,51 @@ public class studentSystem {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入要删除的学生id");
         String id = sc.next();
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId().equals(id)) {
-                list.remove(i);
-            }
+        if (isIDExists(list, id)) {
+            int index = getIndex(list, id);
+            list.remove(index);
+            System.out.println("删除成功");
+        } else {
+            System.out.println("id不存在");
         }
     }
 
     //修改学生
     public static void updateStudent(ArrayList<Student> list) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("请输入要修改的学生id");
-        String id = scanner.next();
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getId().equals(id)) {
-
-            }
+        String id = sc.next();
+        if (isIDExists(list, id)) {
+            int index = getIndex(list, id);
+            Student s = new Student();
+            System.out.println("请输入学生id");
+            id = sc.next();
+            s.setId(id);
+            System.out.println("请输入学生姓名");
+            String name = sc.next();
+            s.setName(name);
+            System.out.println("请输入学生年龄");
+            int age = sc.nextInt();
+            s.setAge(age);
+            System.out.println("请输入学生的家庭地址");
+            String address = sc.next();
+            s.setAddress(address);
+            list.set(index, s);
+            System.out.println("修改成功");
+        } else {
+            System.out.println("id不存在");
         }
     }
 
     //查询学生
     public static void findStudent(ArrayList<Student> list) {
-        System.out.println("id\t" + "姓名\t" + "年龄\t" + "家庭住址\t");
-        for (int i = 0; i < list.size(); i++) {
-            Student s = list.get(i);
-            System.out.println(s.getId() + "\t" + s.getName() + "\t" + s.getAge() + "\t" + s.getAddress() + "\t");
+        if (list.size() == 0) {
+            System.out.println("当前无学生信息，请添加后再查询");
+        } else {
+            System.out.println("id\t" + "姓名\t" + "年龄\t" + "家庭住址\t");
+            for (Student s : list) {
+                System.out.println(s.getId() + "\t" + s.getName() + "\t" + s.getAge() + "\t" + s.getAddress() + "\t");
+            }
         }
     }
 }
