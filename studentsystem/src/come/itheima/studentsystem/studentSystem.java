@@ -31,12 +31,7 @@ public class studentSystem {
 
     //判断id是否存在
     public static boolean isIDExists(ArrayList<Student> list, String id) {
-        for (Student s : list) {
-            if (s.getId().equals(id)) {
-                return true;
-            }
-        }
-        return false;
+        return getIndex(list, id) >= 0;
     }
 
     //获取当前id的下标索引
