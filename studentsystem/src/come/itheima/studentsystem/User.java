@@ -3,17 +3,17 @@ package come.itheima.studentsystem;
 public class User {
     private String username;
     private String passworld;
-    private String idcard;
-    private int phonenumber;
+    private String personID;
+    private int phoneNumber;
 
     public User() {
     }
 
-    public User(String username, String passworld, String idcard, int phonenumber) {
+    public User(String username, String passworld, String personID, int phoneNumber) {
         this.username = username;
         this.passworld = passworld;
-        this.idcard = idcard;
-        this.phonenumber = phonenumber;
+        this.personID = personID;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getUsername() {
@@ -32,19 +32,19 @@ public class User {
         this.passworld = passworld;
     }
 
-    public String getIdcard() {
-        return idcard;
+    public String getPersonID() {
+        return personID;
     }
 
-    public void setIdcard(String idcard) {
-        this.idcard = idcard;
+    public void setPersonID(String personID) {
+        this.personID = personID;
     }
 
-    public int getPhonenumber() {
-        return phonenumber;
+    public int getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
